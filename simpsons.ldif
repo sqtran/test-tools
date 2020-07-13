@@ -1,0 +1,171 @@
+
+## DEFINE DIT ROOT/BASE/SUFFIX ####
+## uses RFC 2377 format
+## replace example and com as necessary below
+## or for experimentation leave as is
+
+## dcObject is an AUXILLIARY objectclass and MUST
+## have a STRUCTURAL objectclass (organization in this case)
+# this is an ENTRY sequence and is preceded by a BLANK line
+
+## FIRST Level hierarchy - people
+## uses mixed upper and lower case for objectclass
+# this is an ENTRY sequence and is preceded by a BLANK line
+
+dn: ou=intranet,dc=example,dc=com
+ou: intranet
+objectclass: organizationalunit
+
+dn: ou=people,ou=intranet,dc=example,dc=com
+ou: people
+description: All people in organisation
+objectclass: organizationalunit
+
+dn: ou=groups,ou=intranet,dc=example,dc=com
+ou: groups
+description: generic groups branch
+objectclass: organizationalunit
+
+## SECOND Level hierarchy
+## ADD a single entry under FIRST (people) level
+# this is an ENTRY sequence and is preceded by a BLANK line
+# the ou: Human Resources is the department name
+
+dn: cn=Homer Simpson,ou=people,ou=intranet,dc=example,dc=com
+objectclass: inetOrgPerson
+cn: Homer Simpson
+sn: Simpson
+uid: hsimpson
+userpassword: 123456
+homephone: 555-555-5555
+mail: homer@simpson.com
+description: test account
+
+dn: cn=Marge Simpson,ou=people,ou=intranet,dc=example,dc=com
+objectclass: inetOrgPerson
+cn: Marge Simpson
+sn: Simpson
+uid: mbsimpson
+userpassword: 123456
+homephone: 555-555-5555
+mail: marge@simpson.com
+description: test account
+
+dn: cn=Lisa Simpson,ou=people,ou=intranet,dc=example,dc=com
+objectclass: inetOrgPerson
+cn: Lisa Simpson
+sn: Simpson
+uid: lsimpson
+userpassword: 123456
+homephone: 555-555-5555
+mail: lisa@simpson.com
+description: test account
+
+dn: cn=Bart Simpson,ou=people,ou=intranet,dc=example,dc=com
+objectclass: inetOrgPerson
+cn: Bart Simpson
+sn: Simpson
+uid: bsimpson
+userpassword: 123456
+homephone: 555-555-5555
+mail: bart@simpson.com
+description: test account
+
+dn: cn=Maggie Simpson,ou=people,ou=intranet,dc=example,dc=com
+objectclass: inetOrgPerson
+cn: Maggie Simpson
+sn: Simpson
+uid: msimpson
+userpassword: 123456
+homephone: 555-555-5555
+mail: maggie@simpson.com
+description: test account
+
+dn: cn=Kirt VanHouten,ou=people,ou=intranet,dc=example,dc=com
+objectclass: inetOrgPerson
+cn: Kirt VanHouten
+sn: VanHouten
+uid: kvanhouten
+userpassword: 123456
+homephone: 555-555-5555
+mail: kirk@vanhouten.com
+description: test account
+
+dn: cn=Luann VanHouten,ou=people,ou=intranet,dc=example,dc=com
+objectclass: inetOrgPerson
+cn: Luann VanHouten
+sn: VanHouten
+uid: lvanhouten
+userpassword: 123456
+homephone: 555-555-5555
+mail: luann@vanhouten.com
+description: test account
+
+dn: cn=Milhouse VanHouten,ou=people,ou=intranet,dc=example,dc=com
+objectclass: inetOrgPerson
+cn: Milhouse VanHouten
+sn: VanHouten
+uid: mvanhouten
+userpassword: 123456
+homephone: 555-555-5555
+mail: milhouse@vanhouten.com
+description: test account
+
+
+dn: cn=Clancy Wiggum,ou=people,ou=intranet,dc=example,dc=com
+objectclass: inetOrgPerson
+cn: Clancy Wiggum
+sn: Wiggum
+uid: cwiggum
+userpassword: 123456
+homephone: 555-555-5555
+mail: clancy@wiggum.com
+description: test account
+
+dn: cn=Sarah Wiggum,ou=people,ou=intranet,dc=example,dc=com
+objectclass: inetOrgPerson
+cn: Sarah Wiggum
+sn: Wiggum
+uid: swiggum
+userpassword: 123456
+homephone: 555-555-5555
+mail: sarah@wiggum.com
+description: test account
+
+dn: cn=Ralph Wiggum,ou=people,ou=intranet,dc=example,dc=com
+objectclass: inetOrgPerson
+cn: Ralph Wiggum
+sn: Wiggum
+uid: rwiggum
+userpassword: 123456
+homephone: 555-555-5555
+mail: ralph@wiggum.com
+description: test account
+
+
+dn: cn=Simpsons,ou=groups,ou=intranet,dc=example,dc=com
+cn: Simpsons
+description: The Simpsons group
+objectclass: groupOfNames
+member: cn=Homer Simpson,ou=people,ou=intranet,dc=example,dc=com
+member: cn=Marge Simpson,ou=people,ou=intranet,dc=example,dc=com
+member: cn=Bart Simpson,ou=people,ou=intranet,dc=example,dc=com
+member: cn=Lisa Simpson,ou=people,ou=intranet,dc=example,dc=com
+member: cn=Maggie Simpson,ou=people,ou=intranet,dc=example,dc=com
+
+dn: cn=VanHoutens,ou=groups,ou=intranet,dc=example,dc=com
+cn: VanHoutens
+description: The Van Houtens group
+objectclass: groupOfNames
+member: cn=Kirt VanHouten,ou=people,ou=intranet,dc=example,dc=com
+member: cn=Luann VanHouten,ou=people,ou=intranet,dc=example,dc=com
+member: cn=Milhouse VanHouten,ou=people,ou=intranet,dc=example,dc=com
+
+dn: cn=Wiggums,ou=groups,ou=intranet,dc=example,dc=com
+cn: Wiggums
+description: The Wiggums group
+objectclass: groupOfNames
+member: cn=Clancy Wiggum,ou=people,ou=intranet,dc=example,dc=com
+member: cn=Sarah Wiggum,ou=people,ou=intranet,dc=example,dc=com
+member: cn=Ralph Wiggum,ou=people,ou=intranet,dc=example,dc=com
+
