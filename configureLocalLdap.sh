@@ -10,5 +10,9 @@ do
   sleep 3
 done
 
-ldapadd -w admin -D "cn=Manager,dc=example,dc=com" -h frenchfries.apps.na311.openshift.opentlc.com:$PORT -f simpsons.ldif 
-ldapsearch -w admin -D "cn=Manager,dc=example,dc=com" -b "ou=intranet,dc=example,dc=com" -h freedomfries.apps.na311.openshift.opentlc.com:$PORT
+DOMAIN=$(oc project | awk '{print $6}' | sed 's/"https:\/\/[a-z]\+.//g' | sed 's/:[0-9]\+".//g')
+
+echo "Connecting to *.apps.$DOMAIN:$PORT"
+
+ldapadd -w admin -D "cn=Manager,dc=example,dc=com" -h frenchfries.apps.$DOMAIN:$PORT -f simpsons.ldif
+ldapsearch -w admin -D "cn=Manager,dc=example,dc=com" -b "ou=intranet,dc=example,dc=com" -h freedomfries.apps.$DOMAIN:$PORT
